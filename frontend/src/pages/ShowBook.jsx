@@ -31,6 +31,11 @@ const ShowBook = () => {
         <Spinner />
       ) : (
         <div className='flex flex-col border-2 border-sky-400 rounded-xl w-fit p-4'>
+          {book.photo && (
+            <div className='my-4'>
+              <img src={`http://localhost:5555/${book.photo}`} alt={book.title} className='w-80 h-90 bject-cover' />
+            </div>
+          )}
           <div className='my-4'>
             <span className='text-xl mr-4 text-gray-500'>Id</span>
             <span>{book._id}</span>
@@ -54,6 +59,11 @@ const ShowBook = () => {
           <div className='my-4'>
             <span className='text-xl mr-4 text-gray-500'>Last Update Time</span>
             <span>{new Date(book.updatedAt).toString()}</span>
+          </div>
+          
+          <div className='my-4'>
+            <span className='text-xl mr-4 text-gray-500'>Book Description</span>
+            <p style={{ whiteSpace: 'pre-wrap' }}>{book.description}</p>
           </div>
         </div>
       )}

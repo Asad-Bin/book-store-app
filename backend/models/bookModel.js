@@ -14,11 +14,19 @@ const bookSchema = mongoose.Schema(
             type: Number,
             required: true
         },
+        photo : {
+            type: String, // need to add photo url
+            required: false
+        },
+        description : {
+            type: String,
+            required: false
+        }
     },
     {
         timestamps: true,
     }
 );
 
-const Book = mongoose.model('Cat', bookSchema);
+const Book = mongoose.model('Book', bookSchema);
 export default Book;

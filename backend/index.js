@@ -26,6 +26,9 @@ app.use(
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = Path.dirname(__filename);
 
+// Serve static files from the uploads directory
+app.use('/uploads', express.static(Path.join(__dirname, 'uploads')));
+
 // Serve static files from the frontend directory
 app.use(express.static(Path.join(__dirname, '../frontend')));
 
